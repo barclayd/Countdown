@@ -11,11 +11,11 @@ const updateTimer = (deadline) => {
 }
 
 const animateClock = (span) => {
-    // animation lasts for 0.7 seconds
+    // animation lasts for 0.5 seconds
     span.className = 'turn';
     setTimeout(() => {
         span.className = '';
-    }, 700);
+    }, 500);
 }
 
 const startTimer = (id, deadline) => {
