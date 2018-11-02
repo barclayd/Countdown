@@ -1,4 +1,5 @@
-const updateTimer = (deadline) => {
+let updateTimer = (deadline) => {
+    // calculates time left until deadline 
     const time = deadline - new Date();
     return {
         'days': Math.floor(time / (1000 * 60 * 60 * 24)),
@@ -10,9 +11,17 @@ const updateTimer = (deadline) => {
 }
 
 const startTimer = (id, deadline) => {
+    // calls updateTimer every second
     const timeInterval = setInterval(() => {
         const clock = document.getElementById(id);
-        const timer = updateTimer(deadline);
+        let timer = updateTimer(deadline);
+
+        clock.innerHTML =
+            '<span>' + timer.days + '</span>' +
+            '<span>' + timer.hours + '</span>' +
+            '<span>' + timer.minutes + '</span>' +
+            '<span>' + timer.seconds + '</span>';
+
     }, 1000);
 }
 
